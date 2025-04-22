@@ -48,6 +48,7 @@ function get_supported_package_manager {
     return
   fi 
   echo "Your distro is not supported. Please manually install ffmpeg. "
+  echo "Please note that this script is meant ONLY for real Linux, not WSL or Git Bash!"
   exit 2
 }
 
