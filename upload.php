@@ -43,7 +43,7 @@ if ($file_type != "txt") {
 
 
 if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
-    $uploaded_file_name = htmlspecialchars(basename($_FILES["upload_list"]["name"]));
+    $uploaded_file_name = htmlspecialchars(basename($_FILES["fileToUpload"]["name"]));
     echo "<p>The file ". $uploaded_file_name . " has been uploaded. </p>";
     // Call parse.py and pass the name of the file that has just been uploaded:
     $cmd = escapeshellcmd("python3 /var/www/rvcg/parse.py $target_file");
