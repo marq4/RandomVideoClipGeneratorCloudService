@@ -53,12 +53,26 @@ function get_supported_package_manager {
 }
 
 
+function verify_subdir_exists {
+  if [[ $# -ne 1 ]]
+  then
+    subfolder_name_missing
+  fi
+  if [[ ! -d "$1" ]]
+  then
+    echo "Subfolder for videos does not exist. "
+    echo "Default name is videos, or please specify a name. "
+    exit 3
+  fi
+}
+
 function main {
   videos_subfolder="videos"
   if [[ $# -ge 1 ]]
   then
     videos_subfolder=${1%/} # Remove trailing /. 
   fi
+  verify_subdir_exists ${videos_subfolder}
   get_supported_package_manager
   install_ffmpeg
   process_subdir ${videos_subfolder}
