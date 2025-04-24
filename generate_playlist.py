@@ -63,6 +63,7 @@ def generate_random_video_clips_playlist(video_list: list) -> ET.Element:
     for iteration in range(NUMBER_OF_CLIPS):
         pair = select_video_at_random(video_list)
         video_file = list(pair.keys())[0]
+        video_file += '.mp4'
         #print(f"Video selected at random: {video_file}")#TMP
         duration = int(float(list(pair.values())[0].rstrip()))
         #print(f"Duration: {duration}")
@@ -153,8 +154,8 @@ def main():
     pairs = read_json(filename)
     display_as_unorderedlist(pairs) #TMP
     xml = generate_playlist(pairs)
-    print("<p>The playlist for VLC has been generated: ")
-    print(f"<div>{xml}</div>") #TMP
+    print("<p>The playlist for VLC has been generated. ")
+    #print(f"<div>{xml}</div>") #TMP
     print("</p>")
     generate_download_button(xml)
 #
