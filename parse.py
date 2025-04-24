@@ -2,6 +2,7 @@
 
 """ Parse video-list text file into a dictionary Title:duration. """
 
+import json
 import sys
 
 
@@ -36,15 +37,41 @@ def display_list_pairs(pairs: list) -> None:
     print("]</div>")
 #
 
+def generate_playlist_form(filename: str) -> None:
+    """ Generate HTML form with button to generate playlist. """
+    form_html = """ <form method="get" enctype="multipart/form-data"
+        action="call_playlist_generator.php"> """
+    print(form_html)
+    print(""" <input value="Generate Playlist" name="submit" type="submit" /> """)
+    print(f"<input type=\"hidden\" value=\"{filename}.json\" name=\"jsonfilename\" />")
+    print("</form>")
+#
+
+def save_pairs_to_disk(pairs: list, filename: str) -> bool:
+    """ Save list of dictionaries (to Instance Store). """
+    try:
+        with open(f"{filename}.json", 'w') as file:
+            json.dump(pairs, file)
+            return True
+    except:
+        return False
+#
 
 def main():
     """ Receives name of text file. """
     video_list_file_name = sys.argv[1]
     pairs = parse_into_dictios(video_list_file_name)
     display_list_pairs(pairs) #TMP
+    write_suc = save_pairs_to_disk(pairs, video_list_file_name)
+    if not write_suc:
+        print("<p>Unable to write video list to disk!</p>")
+        exit(1)
+    generate_playlist_form(video_list_file_name)
 #
 
 
 if __name__ == '__main__':
     main()
 #
+
+

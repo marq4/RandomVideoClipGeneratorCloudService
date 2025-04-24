@@ -1,3 +1,10 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Video list upload</title>
+</head>
+
+<body>
 <?php
 
 
@@ -60,3 +67,8 @@ if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
 
 
 ?>
+
+
+</body>
+</html>
+
