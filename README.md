@@ -22,7 +22,7 @@ A: None. This project’s main goal is for me to practice Cloud. You still need 
 ## AWS Services
 For now I’ll just list all services that I MAY use for this project.
 * S3: to host the downloadable scripts to generate the text list.
-* VPC: default VPC where the EC2 instance(s) will live. SG? NACLs? Route Table? IGW? EIP? NATGW? Route53 Resolver DNS FW?
+* VPC: custom VPC where the EC2 instances will live. SG allows SSH, HTTP from everywhere for now. Route Table with default route to the IGW. Route53 Resolver DNS FW?
 * IAM?
 * EC2: one of the options to execute the computation of the random clip generation (xml playlist), the other being Lambda?
 * ASG: to scale out up to a second instance? (just for practice)
