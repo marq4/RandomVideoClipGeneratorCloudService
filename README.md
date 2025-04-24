@@ -1,6 +1,6 @@
 # Random Video Clip Generator Cloud Service 
 
-Generate a list of your videos (text file), upload it, and then generate a playlist for VLC to play random clips. 
+Generate a list of your videos (text file), upload it, and then download a playlist for VLC to play random clips. 
 
 * To fork the project: https://github.com/marq4/Random-Video-Clip-Generator
 * The recommended way to display random video clips: https://github.com/marq4/Random-Video-Clip-Generator-Docker 
