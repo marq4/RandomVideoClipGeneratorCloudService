@@ -1,6 +1,6 @@
 # Random Video Clip Generator Cloud Service 
 
-Generate a list of your videos (text file), upload it, and then generate a playlist for VLC to play random clips. 
+Generate a list of your videos (text file), upload it, and then download a playlist for VLC to play random clips. 
 
 * To fork the project: https://github.com/marq4/Random-Video-Clip-Generator
 * The recommended way to display random video clips: https://github.com/marq4/Random-Video-Clip-Generator-Docker 
@@ -8,7 +8,7 @@ Generate a list of your videos (text file), upload it, and then generate a playl
 ## FAQ 
 
 Q: What is the advantage of using this Cloud service over the Python or Docker version? <br />
-A: None. This project’s main goal is for me to practice Cloud. 
+A: None. This project’s main goal is for me to practice Cloud. You still need to have ffmpeg installed locally. 
 
 
 ## Terminology
@@ -22,7 +22,7 @@ A: None. This project’s main goal is for me to practice Cloud.
 ## AWS Services
 For now I’ll just list all services that I MAY use for this project.
 * S3: to host the downloadable scripts to generate the text list.
-* VPC: default VPC where the EC2 instance(s) will live. SG? NACLs? Route Table? IGW? EIP? NATGW? Route53 Resolver DNS FW?
+* VPC: custom VPC where the EC2 instances will live. SG allows SSH, HTTP from everywhere for now. Route Table with default route to the IGW. Route53 Resolver DNS FW?
 * IAM?
 * EC2: one of the options to execute the computation of the random clip generation (xml playlist), the other being Lambda?
 * ASG: to scale out up to a second instance? (just for practice)
