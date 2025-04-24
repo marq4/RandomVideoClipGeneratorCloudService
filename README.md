@@ -8,7 +8,7 @@ Generate a list of your videos (text file), upload it, and then download a playl
 ## FAQ 
 
 Q: What is the advantage of using this Cloud service over the Python or Docker version? <br />
-A: None. This project’s main goal is for me to practice Cloud. 
+A: None. This project’s main goal is for me to practice Cloud. You still need to have ffmpeg installed locally. 
 
 
 ## Terminology
