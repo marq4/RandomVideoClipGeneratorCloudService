@@ -2,6 +2,10 @@ param (
     [string]$custom_subfolder
 )
 
+
+$working_dir = $PWD
+
+
 Set-Variable -Name 'videos_subfolder' -Value $null
 
 #Write-Host "Custom subfolder name is: $custom_subfolder "
@@ -13,7 +17,8 @@ if (-not $PSBoundParameters.ContainsKey('custom_subfolder') ) {
     Set-Variable -Name 'videos_subfolder' -Value $custom_subfolder
 }
 
-Get-Variable -Name 'videos_subfolder'
+
+cd $working_dir
 
 if (Test-Path -Path $videos_subfolder -PathType Container) {
     #Write-Output "Subdir exists!"
@@ -32,8 +37,26 @@ if (-not $found) {
 }
 
 $list_file = "list_" + $videos_subfolder + ".txt"
-#Write-Output $list_file #TMP
 
+# Remove file if exists:
+if (Test-Path -Path $list_file -PathType Leaf) {
+    Remove-Item -Path $list_file
+}
 
+# Get all MP4 files under subdir:
+Set-Variable -Name 'Full_Path' -Value $null
+$Full_Path = "$working_dir\" + "$videos_subfolder"
+$Collection = @()
+$Collection = Get-ChildItem $Full_Path -Filter "*.mp4" -Recurse | Select-Object -ExpandProperty FullName
 
-Write-Output "END!!!" #TMP
+# Create file:
+"" | Out-File -FilePath $list_file
+
+# Append video path and duration to list file:
+foreach ($item in $Collection) {
+    $duration = ffprobe -v error -select_streams v:0 -show_entries stream=duration -of default=noprint_wrappers=1:nokey=1 $item
+    $value = "$item ::: $duration" + [System.Environment]::NewLine
+    Add-Content -Path $list_file -Value $value
+}
+
+Write-Output "Script complete. Please check the list file: $list_file before uploading. "

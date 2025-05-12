@@ -1,3 +1,6 @@
 example_videos/*
 videos/*
 *.mp4
+BKP*TMP*
+list_*.txt
+*.swp

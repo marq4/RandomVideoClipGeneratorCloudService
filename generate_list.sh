@@ -78,6 +78,4 @@ function main {
   process_subdir ${videos_subfolder}
 }
 
-
 main "$@"
-
