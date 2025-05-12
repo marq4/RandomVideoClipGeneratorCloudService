@@ -13,10 +13,10 @@ Generate a list of your videos (text file), upload it, and then download a playl
 2. Download GenerateList.ps1 script from this repo. 
 3. Move it to the folder that contains your videos under subfolder called "videos". 
 4. Execute it: 
-  i. Open an elevated PowerShell window by pressing WIN+X and selecting Windows PowerShell (Admin). 
-  ii. Change-directory into your Videos folder, e.g.: `cd C:\Videos`
-  iii. Execute the script: `powershell.exe -executionpolicy bypass -File .\GenerateList.ps1` 
-  iv. You should see this text: `Script complete. Please check the list file: list_videos.txt before uploading.` 
+   - Open an elevated PowerShell window by pressing WIN+X and selecting Windows PowerShell (Admin). 
+   - Change-directory into your Videos folder, e.g.: `cd C:\Videos`
+   - Execute the script: `powershell.exe -executionpolicy bypass -File .\GenerateList.ps1` 
+   - You should see this text: `Script complete. Please check the list file: list_videos.txt before uploading.` 
 5. Upload the video-list text file to %%%
 
 
