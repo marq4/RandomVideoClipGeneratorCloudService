@@ -32,8 +32,9 @@ def display_as_unorderedlist(pairs: list) -> None:
 
 def read_json(filename: str) -> list:
     """ Imports and returns pairs from json. """
-    with open(filename, 'r') as file:
-        loaded_data = json.load(file)
+    with open(filename, 'r', encoding='utf-8') as file:
+        json_str = file.read()
+    loaded_data = json.loads(json_str)
     return loaded_data
 #
 
@@ -74,7 +75,6 @@ def generate_random_video_clips_playlist(video_list: list) -> ET.Element:
 
         add_clip_to_tracklist(tracks, video_file, begin_at, play_to)
 
-    #print(type(playlist))#TMP
     return playlist
 #
 
@@ -152,7 +152,7 @@ def main():
     #print("<h2>Parse!</h2>") #TMP
     filename = sys.argv[1]
     pairs = read_json(filename)
-    display_as_unorderedlist(pairs) #TMP
+    display_as_unorderedlist(pairs)
     xml = generate_playlist(pairs)
     print("<p>The playlist for VLC has been generated. ")
     #print(f"<div>{xml}</div>") #TMP

@@ -12,15 +12,16 @@ def parse_into_dictios(path: str) -> list:
     the lines by the last occurrence of '.mp4 ::: '.
     """
     result = list()
-    with open(path) as file:
-        while True:
-            line = file.readline()
-            if not line:
-                break
-            pair = dict()
-            (key, val) = line.rsplit('.mp4 ::: ', 1)
-            pair[key] = val
-            result.append(pair)
+    with open(path, 'r', encoding='utf-8') as file:
+        for line in file:
+            line = line.replace('\r', '').replace('\0', '')
+            line = line.replace('\n', '')
+            line = line.replace('\ufeff', '') #Removing BOM.
+            if '.mp4' in line:
+                pair = dict()
+                (key, val) = line.rsplit('.mp4 ::: ', 1)
+                pair[key] = val
+                result.append(pair)
         #
     #
     return result
@@ -50,8 +51,8 @@ def generate_playlist_form(filename: str) -> None:
 def save_pairs_to_disk(pairs: list, filename: str) -> bool:
     """ Save list of dictionaries (to Instance Store). """
     try:
-        with open(f"{filename}.json", 'w') as file:
-            json.dump(pairs, file)
+        with open(f"{filename}.json", 'w', encoding='utf-8') as file:
+            json.dump(pairs, file, ensure_ascii=False)
             return True
     except:
         return False

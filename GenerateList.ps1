@@ -50,13 +50,13 @@ $Collection = @()
 $Collection = Get-ChildItem $Full_Path -Filter "*.mp4" -Recurse | Select-Object -ExpandProperty FullName
 
 # Create file:
-"" | Out-File -FilePath $list_file
+$ignore_output = New-Item -Path $list_file -ItemType File
 
 # Append video path and duration to list file:
 foreach ($item in $Collection) {
     $duration = ffprobe -v error -select_streams v:0 -show_entries stream=duration -of default=noprint_wrappers=1:nokey=1 $item
     $value = "$item ::: $duration" + [System.Environment]::NewLine
-    Add-Content -Path $list_file -Value $value
+    Add-Content -Path $list_file -Value $value -Encoding UTF8
 }
 
 Write-Output "Script complete. Please check the list file: $list_file before uploading. "
