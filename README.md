@@ -78,3 +78,7 @@ For now I’ll just list all services that I MAY use for this project.
 * The user (DJ) signs out.
 * The user (DJ) deletes their account.
 
+
+## Instructions after instance reboot
+1. Update ServerName in /etc/sites-available/rvcg.conf (with http://).
+2. URL is: http://<PUBLIC_DNS>/index.html
