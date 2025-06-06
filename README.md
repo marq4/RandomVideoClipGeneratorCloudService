@@ -82,3 +82,10 @@ For now I’ll just list all services that I MAY use for this project.
 ## Instructions after instance reboot
 1. Update ServerName in /etc/sites-available/rvcg.conf (with http://).
 2. URL is: http://<PUBLIC_DNS>/index.html
+
+
+## Instructions for myself (dev) to generate a test list:
+1. Copy the same 3 videos to another subfolder test_DATE and simply rename them.
+2. Open PowerShell as Admin.
+3. cd C:\Marq\Documents_C\Career\Repo\RandomVideoClipGeneratorCloudService\RandomVideoClipGeneratorCloudService
+4. powershell.exe -executionpolicy bypass -file C:\Marq\Documents_C\Career\Repo\RandomVideoClipGeneratorCloudService\RandomVideoClipGeneratorCloudService\GenerateList.ps1 -custom_subfolder "example_videos"
