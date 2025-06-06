@@ -1,0 +1,13 @@
+* DB: DynamoDB. 
+* Region: Ohio. 
+* Table (collection of items): 
+	+ Name: Crates. 			// So collection of crates. 
+	+ Items (crates): 
+		- Primary Key: 
+			' Partition Key: UserName ("S"). 
+			' Sort Key: CrateName ("S"). 
+		- VideoList:
+			' LocalPath ("S"): duration ("S"). 
+* Capacity Mode: On-demand. 
+* Tags: 
+	+ Name: CratesDDBTable. 

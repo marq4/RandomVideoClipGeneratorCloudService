@@ -11,6 +11,9 @@ import json
 import sys
 import xml.etree.ElementTree as ET
 from subprocess import Popen
+#import html
+import codecs
+import io
 
 
 XML_PLAYLIST_FILE = '/var/www/rvcg/clips.xspf'
@@ -32,9 +35,26 @@ def display_as_unorderedlist(pairs: list) -> None:
 
 def read_json(filename: str) -> list:
     """ Imports and returns pairs from json. """
+    loaded_data = ''
+    #with open(filename, 'r', encoding='utf-8-sig') as file:#XXX
+    #    loaded_data = json.load(file)
+    #loaded_data = json.loads(open(filename).read().encode().decode('utf-8-sig'))#XXX
+    #with codecs.open(filename, 'r', 'utf-8-sig') as file:
+    #    loaded_data = json.load(file)#XXX
+    #loaded_data = json.load(io.StringIO(json_string_with_bom.decode('utf-8-sig')))
+    #with open(filename, 'r') as file:
+    #    data = json.loads(file)
+    #loaded_data = json.load(io.StringIO(data.decode('utf-8-sig')))
     with open(filename, 'r', encoding='utf-8') as file:
         json_str = file.read()
+    #print(f"JSON_STR={json_str}=")#TMP
+    #if json_str.startswith('\ufeff'):
+    #    json_str = json_str[1:]
     loaded_data = json.loads(json_str)
+    #print(f"LOADED_DATA={loaded_data}=")#TMP
+    #with open('/var/www/OwnedByUbuntu/read.txt', 'w') as tmp:#TMP
+    #    tmp.write(loaded_data)#TMP
+    #print(f"<p>LOADED DATA FROM JSON: ____{loaded_data}_____</p>")#TMP
     return loaded_data
 #
 
@@ -73,6 +93,11 @@ def generate_random_video_clips_playlist(video_list: list) -> ET.Element:
         clip_length = random.randint(INTERVAL_MIN, INTERVAL_MAX)
         play_to = begin_at + clip_length
 
+        #print(f"<p>VIDEO FILE: ___{video_file}___ </p>")#TMP
+        #video_file = html.escape(video_file, quote=False)
+        #video_file = video_file.replace('~', '&#126;') # Replaces ~ with &amp;#126;
+        #video_file = video_file.encode('unicode_escape')
+        #print(f"<p>add_clip_to_tracklist __{repr(video_file)}__ </p>")#TMP
         add_clip_to_tracklist(tracks, video_file, begin_at, play_to)
 
     return playlist
@@ -147,17 +172,29 @@ def generate_download_button(xml_path: str) -> None:
     print("</form>")
 #
 
+def generate_to_crate_button(xml_path: str) -> None:
+    """ When user clicks this button, video list is stored on DDB. """
+    form_html = """ <form method="get" enctype="multipart/form-data" 
+        action="save_to_db.php" > """
+    print(form_html)
+    print(""" <input value="Save as crate" name="save_crate" type="submit" /> """)
+    print(f"<input type=\"hidden\" value=\"{xml_path}\" name=\"xml_path\" />")
+    print("</form>")
+
+
 def main():
     """ Read JSON from disk, parse it, generate XML. """
     #print("<h2>Parse!</h2>") #TMP
     filename = sys.argv[1]
     pairs = read_json(filename)
+    #print(f"PAIRS={pairs}=")#TMP
     display_as_unorderedlist(pairs)
     xml = generate_playlist(pairs)
     print("<p>The playlist for VLC has been generated. ")
     #print(f"<div>{xml}</div>") #TMP
     print("</p>")
     generate_download_button(xml)
+    #generate_to_crate_button(xml)
 #
 
 
