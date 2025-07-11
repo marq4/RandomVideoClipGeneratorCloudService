@@ -84,8 +84,8 @@ For now I’ll just list all services that I MAY use for this project.
 2. URL is: http://<PUBLIC_DNS>/index.html
 
 ## Instructions for myself (dev) to scp code to local repo:
-cd /c/Marq/Documents_C/Career/Repo/RandomVideoClipGeneratorCloudService/RandomVideoClipGeneratorCloudService/
-scp -i ../../../Cloud/AWS/SSHAccess.pem ubuntu@ec2-3-144-77-148.us-east-2.compute.amazonaws.com:/var/www/rvcg/upload.php .
+1. cd /c/Marq/Documents_C/Career/Repo/RandomVideoClipGeneratorCloudService/RandomVideoClipGeneratorCloudService/
+2. scp -i ../../../Cloud/AWS/SSHAccess.pem ubuntu@ec2-3-144-77-148.us-east-2.compute.amazonaws.com:/var/www/rvcg/upload.php .
 
 ## Instructions for myself (dev) to generate a test list:
 1. Copy the same 3 videos to another subfolder test_DATE and simply rename them.
