@@ -9,8 +9,7 @@ from boto3.dynamodb.conditions import Attr, Key
 
 
 DEFAULT_DUMMY_USER = 'marq_clickops'
-DEFAULT_CRATE_NAME = 'Default_clickops'
-
+DEFAULT_CRATE_ID = 'mEe84OCO'
 
 
 #def get_crate_from_ddb(user: str, crate_name: str) -> list:
@@ -21,7 +20,7 @@ DEFAULT_CRATE_NAME = 'Default_clickops'
 def persist_default_crate(crate: list, table) -> bool:
     """ For now just overwrite Default Crate. """
     response = table.update_item(
-            Key = {'UserName': DEFAULT_DUMMY_USER, 'CrateName': DEFAULT_CRATE_NAME},
+            Key = {'UserName': DEFAULT_DUMMY_USER, 'CrateID': DEFAULT_CRATE_ID},
             UpdateExpression = 'set VideoList=:v',
             ExpressionAttributeValues = {':v': crate},
             ReturnValues="UPDATED_NEW"

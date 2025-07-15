@@ -5,9 +5,11 @@
 	+ Items (crates): 
 		- Primary Key: 
 			' Partition Key: UserName ("S"). 
-			' Sort Key: CrateName ("S"). 
+			' Sort Key: CrateID ("S"). 
+    - CrateName ("S"). 
 		- VideoList:
 			' LocalPath ("S"): duration ("S"). 
 * Capacity Mode: On-demand. 
 * Tags: 
 	+ Name: CratesDDBTable. 
+

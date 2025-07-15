@@ -16,9 +16,23 @@
 	$cmd = escapeshellcmd("python3 /var/www/rvcg/getcrate.py");
 	$out = shell_exec($cmd);
 	echo "$out";
+
+	$cmd = escapeshellcmd("python3 /var/www/rvcg/is_default_crate_empty.py");
+	$out = shell_exec($cmd);
+	if (trim($out) == "EMPTY") {
+		$grayed_out = True;
+	}
 ?>
   <form method="post" enctype="mutlipart/form-data" action="empty_crate.php">
-    <input value="Empty crate" type="submit" name="empty_crate" />
+    <input value="Empty crate" type="submit" name="empty_crate" 
+    	<?php if ($grayed_out) { echo "disabled"; } ?> />
+  </form>
+  <form method="get" enctype="multipart/form-data" action="call_playlist_generator_default_crate.php">
+    <input value="Generate Playlist" name="submit" type="submit" 
+	<?php if ($grayed_out) { echo "disabled"; } ?> />
+  </form>
+  <form method="post" enctype="multipart/form-data" action="rename_crate_page.html">
+    <input value="Rename crate" name="rename" type="submit" />
   </form>
 </body>
 </html>

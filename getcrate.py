@@ -6,7 +6,6 @@ from boto3 import resource
 from boto3.dynamodb.conditions import Attr, Key
 
 DEFAULT_DUMMY_USER = 'marq_clickops'
-DEFAULT_CRATE_NAME = 'Default_clickops'
 
 
 def display_default_crate(table) -> None:
