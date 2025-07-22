@@ -80,7 +80,7 @@ For now I’ll just list all services that I MAY use for this project.
 
 
 ## Instructions for myself (dev) after instance reboot:
-1. Update ServerName in /etc/sites-available/rvcg.conf (with http://).
+1. Update ServerName in /etc/apache2/sites-available/rvcg.conf (with http://).
 2. URL is: http://<PUBLIC_DNS>/index.html
 
 ## Instructions for myself (dev) to scp code to local repo:
