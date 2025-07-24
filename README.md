@@ -5,16 +5,16 @@ Generate a list (text file) of your music videos (locally downloaded), upload it
 
 ## FAQ 
 
-Q: Where are the instructions to use this service? 
+Q: Where are the instructions to use this service? <br />
 A: In the main page: %%%. 
 
 Q: What is the advantage of using this Cloud service over the Python or Docker version? <br />
 A: None. This project’s main goal is for me to practice Cloud. You still need to have ffmpeg installed locally. 
 
-Q: Where is the code to fork the project?
+Q: Where is the code to fork the project? <br />
 A: https://github.com/marq4/Random-Video-Clip-Generator 
 
-Q: Is this the recommended way to display random video clips locally? 
+Q: Is this the recommended way to display random video clips locally? <br />
 A: No. Please use Docker: https://github.com/marq4/Random-Video-Clip-Generator-Docker 
 
 
