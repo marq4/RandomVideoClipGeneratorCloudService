@@ -47,7 +47,8 @@ A: No. Please use Docker: https://github.com/marq4/Random-Video-Clip-Generator-D
 * Inspector: run A security benchmark agains EC2 ONCE. 
 * Shield: to protect from DDoS. 
 * WAF: protect the webpage from OWASP top 10 exploits. Cost??
-* Health Dashboard: see general status of my services. 
+* Health Dashboard: see general status of my services.
+* Cost Explorer & Budgets. 
 
 ## Use cases 
 * The user (DJ) creates an account by specifying a username and password.
