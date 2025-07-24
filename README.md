@@ -70,7 +70,7 @@ A: No. Please use Docker: https://github.com/marq4/Random-Video-Clip-Generator-D
 
 ## Instructions for myself (dev) to scp code to local repo:
 1. cd /c/Marq/Documents_C/Career/Repo/RandomVideoClipGeneratorCloudService/RandomVideoClipGeneratorCloudService/
-2. scp -i ../../../Cloud/AWS/SSHAccess.pem ubuntu@ec2-3-144-77-148.us-east-2.compute.amazonaws.com:/var/www/rvcg/upload.php .
+2. scp -i ../../../Cloud/AWS/SSHAccess.pem ubuntu@ec2-3-144-77-148.us-east-2.compute.amazonaws.com:/var/www/html/upload.php .
 
 ## Instructions for myself (dev) to generate a test list:
 1. Copy the same 3 videos to another subfolder test_DATE and simply rename them.
