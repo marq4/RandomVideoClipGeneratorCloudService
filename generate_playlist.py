@@ -4,16 +4,10 @@
 Generate XML playlist from dictionaries(title:duration) and send to user. 
 """
 
-import os
 import random
-import subprocess
 import json
 import sys
 import xml.etree.ElementTree as ET
-from subprocess import Popen
-#import html
-import codecs
-import io
 
 
 XML_PLAYLIST_FILE = '/var/www/rvcg/clips.xspf'
@@ -65,7 +59,7 @@ def generate_random_video_clips_playlist(video_list: list) -> ET.Element:
     assert 1 <= NUMBER_OF_CLIPS < sys.maxsize, \
         "Invalid number of clips: {NUMBER_OF_CLIPS} "
 
-    for iteration in range(NUMBER_OF_CLIPS):
+    for _ in range(NUMBER_OF_CLIPS):
         pair = select_video_at_random(video_list)
         video_file = list(pair.keys())[0]
         video_file += '.mp4'
