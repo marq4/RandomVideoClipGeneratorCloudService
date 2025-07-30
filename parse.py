@@ -22,27 +22,14 @@ def parse_into_dictios(path: str) -> list:
     result = list()
     with open(path, 'r', encoding='utf-8') as file:
         for line in file:
-            #line = bytes_read.decode('utf-8')
-            #print(f"<p>LINE: ___{line}___ </p>")#TMP
             line = line.replace('\r', '').replace('\0', '')
             line = line.replace('\n', '')
             line = line.replace('\ufeff', '') # Removing BOM causes problems later?
-            #line = line.replace('~', '&#126;') #XXX: can't add special chars!
             if '.mp4' in line:
-                pair = dict()
+                pair = {}
                 (key, val) = line.rsplit('.mp4 ::: ', 1)
-                #key = encode_to_html_entities(key) #XXX: win filenames too long!
-                #key = key.replace('&amp;', '&')
                 pair[key] = val
                 result.append(pair)
-        #
-    #
-    #print(f"<p>RESULT (pairs): ___{result}___ </p>")#TMP
-    #TMP
-    #for pair in result:
-    #    for key in pair:
-    #        print(f"Pair repr: __{key.encode()}:{pair[key].encode()}__")
-    #\TMP
     return result
 #
 
@@ -59,7 +46,7 @@ def display_list_pairs(pairs: list) -> None:
 
 def generate_persist_crate_form(filename: str) -> None:
     """ Generate HTML form with button to persist crate to DB. """
-    form_html = """ <form method="post" enctype="multipart/form-data" 
+    form_html = """ <form method="post" enctype="multipart/form-data"
         action="save_to_db.php"> """
     print(form_html)
     print(""" <input value="Save crate" name="submit" type="submit" /> """)
@@ -92,9 +79,6 @@ def save_pairs_to_disk(pairs: list, filename: str) -> bool:
 def main():
     """ Receives name of text file. """
     video_list_file_name = sys.argv[1]
-    #print("<h1>" + repr(encode_to_html_entities("&")) +"</h1>")#TMP
-    #with open('/var/www/OwnedByUbuntu/amp.txt', 'w') as tmp:#TMP
-    #    tmp.write("&")#TMP
     pairs = parse_into_dictios(video_list_file_name)
     display_list_pairs(pairs)
     write_suc = save_pairs_to_disk(pairs, video_list_file_name)
@@ -103,12 +87,9 @@ def main():
         exit(1)
     generate_playlist_form(video_list_file_name)
     generate_persist_crate_form(video_list_file_name)
-    #print(f"<p>MAIN COMPLETE!!!!</p>")#TMP
 #
 
 
 if __name__ == '__main__':
     main()
 #
-
-
