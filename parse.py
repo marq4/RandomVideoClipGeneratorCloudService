@@ -69,7 +69,7 @@ def save_pairs_to_disk(pairs: list, filename: str) -> bool:
         with open(f"{filename}.json", 'w', encoding='utf-8') as file:
             json.dump(pairs, file, ensure_ascii=False)
             return True
-    except: Exception as e: #PermissionError as e:
+    except Exception as e:
         return False
 #
 
