@@ -6,16 +6,10 @@ Generate a list (text file) of your music videos (locally downloaded), upload it
 ## FAQ 
 
 Q: Where are the instructions to use this service? <br />
-A: In the main page: %%%. 
-
-Q: What is the advantage of using this Cloud service over the Python or Docker version? <br />
-A: None. This project’s main goal is for me to practice Cloud. You still need to have ffmpeg installed locally. 
+A: In the main page: www.randomvideoclipgenerator.com  
 
 Q: Where is the code to fork the project? <br />
 A: https://github.com/marq4/Random-Video-Clip-Generator 
-
-Q: Is this the recommended way to display random video clips locally? <br />
-A: No. Please use Docker: https://github.com/marq4/Random-Video-Clip-Generator-Docker 
 
 
 
@@ -68,13 +62,3 @@ A: No. Please use Docker: https://github.com/marq4/Random-Video-Clip-Generator-D
 * The user (DJ) signs out.
 * The user (DJ) deletes their account.
 * The user (DJ) reviews instructions, downloads PowerShell or Bash script, clicks link to Suggested Music Videos list. 
-
-## Instructions for myself (dev) to scp code to local repo:
-1. cd /c/Marq/Documents_C/Career/Repo/RandomVideoClipGeneratorCloudService/RandomVideoClipGeneratorCloudService/
-2. scp -i ../../../Cloud/AWS/SSHAccess.pem ubuntu@ec2-3-144-77-148.us-east-2.compute.amazonaws.com:/var/www/html/upload.php .
-
-## Instructions for myself (dev) to generate a test list:
-1. Copy the same 3 videos to another subfolder test_DATE and simply rename them.
-2. Open PowerShell as Admin.
-3. cd C:\Marq\Documents_C\Career\Repo\RandomVideoClipGeneratorCloudService\RandomVideoClipGeneratorCloudService
-4. powershell.exe -executionpolicy bypass -file C:\Marq\Documents_C\Career\Repo\RandomVideoClipGeneratorCloudService\RandomVideoClipGeneratorCloudService\GenerateList.ps1 -custom_subfolder "example_videos"
