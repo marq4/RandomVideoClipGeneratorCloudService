@@ -1,7 +1,9 @@
 """ Remove all videos from default crate by default user. """
 
 import os
+
 import boto3
+
 #from boto3 import resource
 #from boto3.dynamodb.conditions import Attr, Key
 

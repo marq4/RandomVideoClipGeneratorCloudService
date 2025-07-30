@@ -1,12 +1,12 @@
 """ Save list of dictionaries to DDB table and return it. """
 
-import sys
 import json
 import os
+import sys
+
 import boto3
 from boto3 import resource
 from boto3.dynamodb.conditions import Attr, Key
-
 
 DEFAULT_DUMMY_USER = 'marq_clickops'
 DEFAULT_CRATE_ID = 'mEe84OCO'

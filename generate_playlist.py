@@ -4,11 +4,10 @@
 Generate XML playlist from dictionaries(title:duration) and send to user. 
 """
 
-import random
 import json
+import random
 import sys
 import xml.etree.ElementTree as ET
-
 
 XML_PLAYLIST_FILE = '/var/www/rvcg/clips.xspf'
 NUMBER_OF_CLIPS = 5

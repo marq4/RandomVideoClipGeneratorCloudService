@@ -4,21 +4,20 @@
 Generate XML playlist for Default Crate.
 """
 
-import os
-import random
-import subprocess
-import json
-import sys
-import xml.etree.ElementTree as ET
-from subprocess import Popen
 #import html
 import codecs
 import io
+import json
+import os
+import random
+import subprocess
+import sys
+import xml.etree.ElementTree as ET
+from subprocess import Popen
 
 import boto3
 from boto3 import resource
 from boto3.dynamodb.conditions import Attr, Key
-
 
 DEFAULT_DUMMY_USER = 'marq_clickops'
 

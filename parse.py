@@ -5,7 +5,6 @@
 import json
 import sys
 
-
 #def encode_to_html_entities(text: str) -> str:
 #    """ Replace every single characted with its HTML entity. """
 #    result = ''.join(f'&#{ord(char)};' for char in text)

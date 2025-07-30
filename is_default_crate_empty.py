@@ -1,6 +1,7 @@
 """ Check if Default Crate is empty on DynamoDB. """
 
 import os
+
 import boto3
 from boto3 import resource
 from boto3.dynamodb.conditions import Attr, Key
