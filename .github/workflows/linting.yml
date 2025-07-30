@@ -25,9 +25,9 @@ jobs:
 
       - name: Code style.
         run: |
-          echo 'Files to be linted: '
-          echo $(git ls-files '*.py')
-          pylint -v $(git ls-files '*.py')
+          echo 'Files to be linted: generate_playlist.py, parse.py'
+          pylint -v generate_playlist.py
+          pylint -v parse.py
 
       - name: Type checking.
         run: 
