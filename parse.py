@@ -19,7 +19,7 @@ def parse_into_dictios(path: str) -> list:
     Store pairs from text file into array of dictionaries, splitting 
     the lines by the last occurrence of '.mp4 ::: '.
     """
-    result = list()
+    result = []
     with open(path, 'r', encoding='utf-8') as file:
         for line in file:
             line = line.replace('\r', '').replace('\0', '')
@@ -65,14 +65,11 @@ def generate_playlist_form(filename: str) -> None:
 
 def save_pairs_to_disk(pairs: list, filename: str) -> bool:
     """ Save list of dictionaries (to Instance Store). """
-    #print(f"Try open w {filename} \n")#TMP
     try:
         with open(f"{filename}.json", 'w', encoding='utf-8') as file:
-            #print(f"<p>SAVE TO JSON: ___{pairs}___</p>")#TMP
             json.dump(pairs, file, ensure_ascii=False)
             return True
-    except: #Exception as e: #PermissionError as e:
-        #print(e)#TMP
+    except: Exception as e: #PermissionError as e:
         return False
 #
 
@@ -84,7 +81,7 @@ def main():
     write_suc = save_pairs_to_disk(pairs, video_list_file_name)
     if not write_suc:
         print("<p>Unable to write video list to disk!</p>")
-        exit(1)
+        sys.exit(1)
     generate_playlist_form(video_list_file_name)
     generate_persist_crate_form(video_list_file_name)
 #
