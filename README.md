@@ -1,4 +1,4 @@
-# Random Video Clip Generator Cloud Semi-Service 
+# Random Video Clip Generator Cloud service 
 
 Generate a list (text file) of your music videos (locally downloaded), upload it, and then download a playlist (xml) for VLC to play random clips locally! 
 
