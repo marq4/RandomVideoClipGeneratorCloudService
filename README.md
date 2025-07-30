@@ -1,17 +1,7 @@
 # Random Video Clip Generator Cloud service 
 
 Generate a list (text file) of your music videos (locally downloaded), upload it, and then download a playlist (xml) for VLC to play random clips locally! 
-
-
-## FAQ 
-
-Q: Where are the instructions to use this service? <br />
-A: In the main page: www.randomvideoclipgenerator.com  
-
-Q: Where is the code to fork the project? <br />
-A: https://github.com/marq4/Random-Video-Clip-Generator 
-
-
+www.randomvideoclipgenerator.com  
 
 ## Terminology
 
