@@ -3,9 +3,8 @@
 """ Parse video-list text file into a dictionary Title:duration. """
 
 import json
-import sys
 import ntpath
-
+import sys
 
 #def encode_to_html_entities(text: str) -> str:
 #    """ Replace every single characted with its HTML entity. """
