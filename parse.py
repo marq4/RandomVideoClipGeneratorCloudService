@@ -53,11 +53,8 @@ def generate_persist_crate_form(filename: str) -> None:
     print("</form>")
 
 def generate_playlist_form(filename: str) -> None:
-    """ Generate HTML form with button to generate playlist. """
     form_html = """ <form method="get" enctype="multipart/form-data"
-        action="call_playlist_generator.php"> """
     print(form_html)
-    print(""" <input value="Generate Playlist" name="submit" type="submit" /> """)
     print(f"<input type=\"hidden\" value=\"{filename}.json\" name=\"jsonfilename\" />")
     print("</form>")
 #

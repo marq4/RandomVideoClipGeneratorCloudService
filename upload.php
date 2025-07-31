@@ -35,6 +35,7 @@ if ( isset($_POST["submit"]) ) {
 // Check if file already exists:
 if (file_exists($target_file)) {
     echo "<p>File already exists. Not replacing. </p>";
+    echo "<a href=\"javascript:history.go(-1)\">Back</a>";
     exit(2);
 }
 
@@ -53,11 +54,13 @@ if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
     $uploaded_file_name = htmlspecialchars(basename($_FILES["fileToUpload"]["name"]));
     echo "<p>The file ". $uploaded_file_name . " has been uploaded. </p>";
     // Call parse.py and pass the name of the file that has just been uploaded:
-    $cmd = escapeshellcmd("python3 /var/www/rvcg/parse.py $target_file");
+    $cmd = escapeshellcmd("python3 /var/www/html/parse.py $target_file");
     $out = shell_exec($cmd);
     echo "$out";
+    echo "<a href=\"javascript:history.go(-1)\">Back</a>";
 } else {
     echo "<p>Sorry, there was an error uploading your file. </p>";
+    echo "<a href=\"javascript:history.go(-1)\">Back</a>";
     exit(2);
 }
 

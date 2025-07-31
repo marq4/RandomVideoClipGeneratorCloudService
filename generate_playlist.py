@@ -129,15 +129,6 @@ def generate_playlist(pairs: list) -> str:
     return XML_PLAYLIST_FILE
 #
 
-def generate_download_button(xml_path: str) -> None:
-    """ Generate HTML form and button to download playlist. """
-    form_html = """ <form method="get" enctype="multipart/form-data"
-        action="download_playlist.php"> """
-    print(form_html)
-    print(""" <input value="Download Playlist" name="submit" type="submit" /> """)
-    print(f"<input type=\"hidden\" value=\"{xml_path}\" name=\"xml_path\" />")
-    print("</form>")
-#
 
 def generate_to_crate_button(xml_path: str) -> None:
     """ When user clicks this button, video list is stored on DDB. """
@@ -155,9 +146,6 @@ def main():
     pairs = read_json(filename)
     display_as_unorderedlist(pairs)
     xml = generate_playlist(pairs)
-    print("<p>The playlist for VLC has been generated. ")
-    print("</p>")
-    generate_download_button(xml)
 #
 
 

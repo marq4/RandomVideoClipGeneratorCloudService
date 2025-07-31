@@ -2,15 +2,18 @@
 
 
 $file = basename($_GET['xml_path']);
+//$file = $argv[1];
+//$file = $_GET[''
 $nice_name = $file;
 //echo "<h1>$file</h1>"; //TMP
 
-$file = '/var/www/rvcg/' . $file;
+//$file = '/var/www/html' . $file;
 
-//echo "<h1>$file</h1>"; //TMP
+//echo "<h1>FILE:::::$file</h1>"; //TMP. DISABLE THIS LINE for file download to work!
 
 if ( ! file_exists($file) ) {
-	die('File not found. ');
+	http_response_code(404);
+	exit('File not found. ');
 } else {
 	header("Cache-Control: public");
 	header("Content-Description: File Transfer");
@@ -20,4 +23,7 @@ if ( ! file_exists($file) ) {
 	readfile($file);
 }
 
+
 ?>
+
+
