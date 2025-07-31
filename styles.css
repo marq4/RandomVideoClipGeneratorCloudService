@@ -54,15 +54,21 @@ code {
 	background-color: #041e24;
 }
 
+.actual-button {
+	font-family:inherit;font-size:100%;line-height:1.15;margin:0;
+	overflow:visible;	
+}
+
+
 button,input,optgroup,select,textarea {
 	font-family:inherit;font-size:100%;line-height:1.15;margin:0
 }
 
-button,input {
+.actual-button button,input {
 	overflow:visible
 }
 
-button,select {
+.actual-button button,select {
 	text-transform:none
 }
 
@@ -70,19 +76,21 @@ button,select {
 	-webkit-appearance:button
 }
 
-[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner,button::-moz-focus-inner {
+.upload-form [type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner,button::-moz-focus-inner {
 	border-style:none;padding:0
 }
 
-[type=button]:-moz-focusring,[type=reset]:-moz-focusring,[type=submit]:-moz-focusring,button:-moz-focusring {
+.upload-form [type=button]:-moz-focusring,[type=reset]:-moz-focusring,[type=submit]:-moz-focusring,button:-moz-focusring {
 	outline:1px dotted ButtonText
 }
 
 ::-webkit-file-upload-button {
-	-webkit-appearance:button;font:inherit
+	-webkit-appearance:button;
+	font:inherit;
 }
 
-form {
+
+.upload-form {
   margin-left: auto;
   margin-right: 2em;
   display: flex;
@@ -131,7 +139,7 @@ form {
   padding-bottom: 6em;
 }
 
-form input {
+.upload-form input {
 	background-color: #4a90e2;
 	color: white;
   border: none;
@@ -143,20 +151,17 @@ form input {
   transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-form input:hover {
+.upload-form input:hover {
 	background-color: #357ab8;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
 
-form input:active {
+.upload-form input:active {
 	background-color: #2d5d8c;
 	transform: scale(0.98);
 }
 
-form label {
-}
-
-input {
+.upload-form input {
 	  appearance: button;
   background-color: #1899D6;
   border: solid transparent;
@@ -186,7 +191,7 @@ input {
   white-space: nowrap;
 }
 
-input:after {
+.upload-form input:after {
   background-clip: padding-box;
   background-color: #1CB0F6;
   border: solid transparent;
@@ -201,7 +206,7 @@ input:after {
   z-index: -1;
 }
 
-div {
+div.info {
   font-family: 'Georgia', 'Times New Roman', serif;
   font-size: 1.1rem;
   line-height: 1.6;
@@ -228,7 +233,112 @@ h1 {
 
 @keyframes shimmer { to { background-position: 100% } }
 
+#numclips {
+	padding-left: 6em;
+}
 
+#clipsin {
+	width: 4em;
+}
+
+.playlist input[type="number"] {
+	width: 3em;
+	padding: 2px;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	font-size: 16px;
+	background-color: #4d4c46;
+	color: white;
+}
+
+input[type="number"]:focus {
+	outline: none;
+	border-color: #007bff;
+	box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+
+input[type="submit"] {
+	font-family:inherit;font-size:100%;line-height:1.15;margin:0;
+        overflow:visible;
+	font-family:inherit;font-size:100%;line-height:1.15;margin:0
+	overflow:visible
+	text-transform:none
+	-webkit-appearance:button
+	border-style:none;padding:0
+	-webkit-appearance:button;
+	font:inherit;
+	background-color: #4a90e2;
+        color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 500;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+     appearance: button;
+  background-color: #1899D6;
+  border: solid transparent;
+  border-radius: 16px;
+  border-width: 0 0 4px;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: inline-block;
+  font-family: din-round,sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: .8px;
+  line-height: 20px;
+  margin: 0;
+  outline: none;
+  overflow: visible;
+  padding: 13px 16px;
+  text-align: center;
+  text-transform: uppercase;
+  touch-action: manipulation;
+  transform: translateZ(0);
+  transition: filter .2s;
+  user-select: none;
+  -webkit-user-select: none;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+input[type="submit"]:hover {
+	background-color: #357ab8;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+input[type="submit"]:active {
+	        background-color: #2d5d8c;
+        transform: scale(0.98);
+}
+
+input[type="submit"]:after {
+	  background-clip: padding-box;
+  background-color: #1CB0F6;
+  border: solid transparent;
+  border-radius: 16px;
+  border-width: 0 0 4px;
+  bottom: -4px;
+  content: "";
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: -1;
+}
+
+div.bottom {
+	padding-bottom: 4em;
+}
+
+#gendow {
+	margin-top: 1em;
+	float: right;
+}
 
 
 

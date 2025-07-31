@@ -3,9 +3,12 @@
 $xml_path = '/var/www/html/clips.xspf';
 $nice_name = basename($xml_path);
 $jsonfilename = $_GET["jsonfilename"];
+$n = $_GET["num_clips"];
+$m = $_GET["min_duration"];
+$x = $_GET["max_duration"];
 
 // Generate the playlist:
-exec("python3 /var/www/html/generate_playlist.py $jsonfilename");
+exec("python3 /var/www/html/generate_playlist.py $jsonfilename $n $m $x");
 
 // Serve the file for download:
 if ( file_exists($xml_path) ) {

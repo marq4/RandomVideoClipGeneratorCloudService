@@ -6,7 +6,7 @@
 </head>
 <body>
   <h1>Random Video Clip Generator</h1>
-  <div>
+  <div class="info">
     <h2>Instructions (Windows):</h2>
     <ol>
       <li>Install <a href="https://www.youtube.com/watch?v=DMEP82yrs5g">FFMPEG</a>.</li>
@@ -27,10 +27,11 @@
       <li>When you double-click the downloaded playlist, your video clips will appear on VLC media player. Press <code>f</code> key to toggle full-screen.</li>
     </ol>
   </div>
-  <form method="post" enctype="multipart/form-data" action="upload.php">
+  <form method="post" enctype="multipart/form-data" action="upload.php" 
+	class="upload-form">
     <label for="fileToUpload">Select video list text file</label>
-    <input id="fileToUpload" name="fileToUpload" type="file" />
-    <input value="Upload" name="submit" type="submit" />
+    <input id="fileToUpload" name="fileToUpload" type="file" class="actual-button" />
+    <input value="Upload" name="submit" type="submit" class="actual-button" />
   </form>
 </body>
 </html>

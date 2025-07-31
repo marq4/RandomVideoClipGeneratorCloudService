@@ -35,7 +35,7 @@ def parse_into_dictios(path: str) -> list:
 
 def display_list_pairs(pairs: list) -> None:
     """ Simply display in webpage. """
-    print("<div>")
+    print('<div class="info">')
     print("<ul>")
     for pair in pairs:
         for key in pair:
@@ -57,11 +57,20 @@ def generate_persist_crate_form(filename: str) -> None:
 def generate_playlist_form(filename: str) -> None:
     """ Generate HTML form with button to generate & download playlist. """
     form_html = """ <form method="get" enctype="multipart/form-data"
-        action="generate_and_download.php"> """
+        action="generate_and_download.php" class="playlist"> """
     print(form_html)
-    print(""" <input value="Generate & Download Playlist" name="submit" type="submit" /> """)
+    print(""" <label for="num_clips" id="numclips">Number of clips:</label> """)
+    print(""" <input type="number" name="num_clips" id="clipsin" value="5" /> """)
+    print(""" <label for="min_duration">Minimum duration:</label> """)
+    print(""" <input type="number" name="min_duration" value="1" /> """)
+    print(""" <label for="max_duration">Maximum duration:</label> """)
+    print(""" <input type="number" name="max_duration" value="4" /> """)
+    print('<br />')
+    print(""" <input value="Generate & Download Playlist" 
+            name="submit" type="submit" id="gendow" /> """)
     print(f"<input type=\"hidden\" value=\"{filename}.json\" name=\"jsonfilename\" />")
     print("</form>")
+    print('<div class="bottom"></div>')
 #
 
 def save_pairs_to_disk(pairs: list, filename: str) -> bool:
@@ -85,7 +94,6 @@ def main():
         print("<p>Unable to write video list to disk!</p>")
         sys.exit(1)
     generate_playlist_form(video_list_file_name)
-    generate_persist_crate_form(video_list_file_name)
 #
 
 
