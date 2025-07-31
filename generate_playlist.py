@@ -9,10 +9,10 @@ import random
 import sys
 import xml.etree.ElementTree as ET
 
-XML_PLAYLIST_FILE = '/var/www/rvcg/clips.xspf'
-NUMBER_OF_CLIPS = 5
-INTERVAL_MIN = 4
-INTERVAL_MAX = 8
+XML_PLAYLIST_FILE = '/var/www/html/clips.xspf'
+NUMBER_OF_CLIPS = 55
+INTERVAL_MIN = 2
+INTERVAL_MAX = 2
 
 
 def display_as_unorderedlist(pairs: list) -> None:

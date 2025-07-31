@@ -4,6 +4,8 @@
 
 import json
 import sys
+import ntpath
+
 
 #def encode_to_html_entities(text: str) -> str:
 #    """ Replace every single characted with its HTML entity. """
@@ -34,13 +36,14 @@ def parse_into_dictios(path: str) -> list:
 
 def display_list_pairs(pairs: list) -> None:
     """ Simply display in webpage. """
-    print("<div>[")
-    print("  <ul>")
+    print("<div>")
+    print("<ul>")
     for pair in pairs:
         for key in pair:
-            print("    <li>{"+key+' ====> '+pair[key]+"}</li>")
-    print("  </ul>")
-    print("]</div>")
+            video_title = ntpath.basename(key)
+            print(f"<li>{video_title}</li>")
+    print("</ul>")
+    print("</div>")
 #
 
 def generate_persist_crate_form(filename: str) -> None:
@@ -53,8 +56,11 @@ def generate_persist_crate_form(filename: str) -> None:
     print("</form>")
 
 def generate_playlist_form(filename: str) -> None:
+    """ Generate HTML form with button to generate & download playlist. """
     form_html = """ <form method="get" enctype="multipart/form-data"
+        action="generate_and_download.php"> """
     print(form_html)
+    print(""" <input value="Generate & Download Playlist" name="submit" type="submit" /> """)
     print(f"<input type=\"hidden\" value=\"{filename}.json\" name=\"jsonfilename\" />")
     print("</form>")
 #

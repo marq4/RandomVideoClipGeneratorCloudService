@@ -2,15 +2,18 @@
 <html>
 <head>
   <title>Random Video Clip Generator</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <h1>Random Video Clip Generator</h1>
   <div>
     <h2>Instructions (Windows):</h2>
     <ol>
+      <li>Install <a href="https://www.youtube.com/watch?v=DMEP82yrs5g">FFMPEG</a>.</li>
+      <li>Install <a href="https://www.videolan.org/vlc/">VLC</a>.</li>
       <li>Create folder structure on your computer: <code>C:\Videos\videos</code></li>
       <li>Download some music videos there (contact me for instructions: <a href="mailto:juancmarquina@gmail.com">juancmarquina@gmail.com</a>).</li>
-      <li>Download the <a href="s3://TODO">PoweShell script</a>.</li>
+      <li>Download the <a href="https://rvcg-marq-30072025.s3.us-east-2.amazonaws.com/GenerateList.ps1">PoweShell script</a>.</li>
       <li>Move it to <code>C:\Videos</code> folder.</li>
       <li>Run it:</li>
 	<ol>
@@ -19,8 +22,8 @@
 	  <li>Execute the script: <code>powershell.exe -executionpolicy bypass -File .\GenerateList.ps1</code></li>
 	  <li>Contact me if you don't see this: <code>Script complete.</code></li>
 	</ol>
-      <li>Upload <code>list_videos.txt</code> here (see bellow).</li>
-      <li>For now we all share a deault crate. After uploading your list of videos, click the <code>Generate Playlist</code> button.</li>
+      <li>Upload <code>list_videos.txt</code> bellow (Browse + Upload).</li>
+      <li>After uploading your list of videos, click the <code>Generate &amp; Download Playlist</code> button.</li>
       <li>When you double-click the downloaded playlist, your video clips will appear on VLC media player. Press <code>f</code> key to toggle full-screen.</li>
     </ol>
   </div>
