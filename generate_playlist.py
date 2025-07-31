@@ -145,7 +145,7 @@ def main():
     filename = sys.argv[1]
     pairs = read_json(filename)
     display_as_unorderedlist(pairs)
-    xml = generate_playlist(pairs)
+    generate_playlist(pairs)
 #
 
 
