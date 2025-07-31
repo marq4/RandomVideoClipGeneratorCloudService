@@ -44,7 +44,7 @@ def verify_intervals_valid() -> None:
     assert LARGEST_MAX >= DEFAULT_INTERVAL_MAX >= 1
 #
 
-def generate_random_video_clips_playlist(video_list: list, 
+def generate_random_video_clips_playlist(video_list: list,
                 num_clips: int, min_duration: int, max_duration: int) -> ET.Element:
     """
     * Create playlist as an xml element tree.
@@ -125,7 +125,7 @@ def prepend_line(filename: str, line: str) -> None:
             file.write( line.rstrip("\r\n") + "\n" + content )
 #
 
-def generate_playlist(pairs: list, 
+def generate_playlist(pairs: list,
                       num_clips: int,
                       min_duration: int,
                       max_duration: int) -> None:
@@ -135,16 +135,6 @@ def generate_playlist(pairs: list,
                                                        min_duration, max_duration)
     create_xml_file(top_element)
 #
-
-
-#def generate_to_crate_button(xml_path: str) -> None:
-#    """ When user clicks this button, video list is stored on DDB. """
-#    form_html = """ <form method="get" enctype="multipart/form-data" 
-#        action="save_to_db.php" > """
-#    print(form_html)
-#    print(""" <input value="Save as crate" name="save_crate" type="submit" /> """)
-#    print(f"<input type=\"hidden\" value=\"{xml_path}\" name=\"xml_path\" />")
-#    print("</form>")
 
 def validate_num_clips(desired: str) -> int:
     """ TRY to give the user the number of clips they desire. """
