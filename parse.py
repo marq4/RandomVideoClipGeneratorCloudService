@@ -66,7 +66,7 @@ def generate_playlist_form(filename: str) -> None:
     print(""" <label for="max_duration">Maximum duration:</label> """)
     print(""" <input type="number" name="max_duration" value="4" /> """)
     print('<br />')
-    print(""" <input value="Generate & Download Playlist" 
+    print(""" <input value="Generate & Download Playlist"
             name="submit" type="submit" id="gendow" /> """)
     print(f"<input type=\"hidden\" value=\"{filename}.json\" name=\"jsonfilename\" />")
     print("</form>")
