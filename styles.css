@@ -258,7 +258,7 @@ input[type="number"]:focus {
 }
 
 
-input[type="submit"] {
+button {
 	font-family:inherit;font-size:100%;line-height:1.15;margin:0;
         overflow:visible;
 	font-family:inherit;font-size:100%;line-height:1.15;margin:0
@@ -340,7 +340,13 @@ div.bottom {
 	float: right;
 }
 
+h3 {
+  font-size: 0.8em;
+}
 
 
-
+button {
+  font-family:inherit;font-size:100%;line-height:1.15;margin:0;
+  overflow:visible;
+}
 
