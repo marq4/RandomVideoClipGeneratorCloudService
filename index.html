@@ -25,7 +25,7 @@
 	  <li>Contact me if you don't see this: <code>Script complete.</code></li>
 	</ol>
       <li>Upload <code>list_videos.txt</code> bellow (Browse + Upload).</li>
-      <li>After uploading your list of videos, click the <code>Generate &amp; Download Playlist</code> button.</li>
+      <li>After uploading your list of videos, click the <code>Generate Playlist</code> button in the next page.</li>
       <li>When you double-click the downloaded playlist, your video clips will appear on VLC media player. Press <code>f</code> key to toggle full-screen.</li>
     </ol>
   </div>
@@ -36,7 +36,7 @@
       <input type="file" @change="onFileChange" accept="text/plain" />
     </div>
     <div v-else>
-      <button v-if="!uploadURL" @click="uploadFile" class="actual-button">
+      <button v-if="!uploadURL" @click="uploadFile" class="actual-button" id="upload">
         Upload
       </button>
     </div>

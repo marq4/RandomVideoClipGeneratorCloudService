@@ -233,10 +233,6 @@ h1 {
 
 @keyframes shimmer { to { background-position: 100% } }
 
-#numclips {
-	padding-left: 6em;
-}
-
 #clipsin {
 	width: 4em;
 }
@@ -348,5 +344,41 @@ h3 {
 button {
   font-family:inherit;font-size:100%;line-height:1.15;margin:0;
   overflow:visible;
+}
+
+#upload:hover {
+  background-color: #357ab8;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+#upload:active {
+  background-color: #2d5d8c;
+  transform: scale(0.98);
+}
+
+#generatebutton:hover {
+  background-color: #357ab8;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+#generatebutton:active {
+  background-color: #2d5d8c;
+  transform: scale(0.98);
+}
+
+#clipsin {
+  width: 6em;
+}
+
+#mindur, #maxdur {
+  width: 5em;
+}
+
+#app {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;  /* space between labels/inputs */
+  width: fit-content; /* shrink-wrap */
+  height: auto; /* ensure it grows */
 }
 
